@@ -13,3 +13,14 @@ td {
     display: flex;
     justify-content:center;
 }
+.has-conflict {
+  input {
+    color: red;
+  }
+}
+.not-editable {
+    border: 2px solid #000;
+  input {
+    font-weight: bold;
+  }
+}

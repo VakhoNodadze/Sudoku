@@ -1,28 +1,28 @@
 import React from 'react'
 
-const Cell = ({cell}) => {
+const Cell = ({cell, handleKeyPress, row, col}) => {
   
     let classes = [];
-    // classes.push('i'+cell.i);
-    // classes.push('j'+cell.j);
     classes.push(cell.editable ? 'editable' : 'not-editable');
-    classes.push(cell.hasConflict ? 'has-conflict' : 'no-conflict');
-    // shouldComponentUpdate(newProps, newState) {
-    //   var oldCell = this.props.cell;
-    //   var newCell = newProps.cell;
-    //   return (
-    //     oldCell.value !== newCell.value ||
-    //     oldCell.editable !== newCell.editable ||
-    //     oldCell.hasConflict !== newCell.hasConflict
-    //   );
-    // }
+    classes.push(cell.hasConflict ? 'has-conflict' : 'no-conflict')
+    const handleChange = (e) => {
+      const number = e.key;
+      if(!cell.editable){
+        return
+      }
+      if (number === 'Backspace' || number === 'Delete') {
+        handleKeyPress(null, row, col);
+      } else {
+        handleKeyPress(number, row, col);
+      }
+    }
       return (
         <td className={classes.join(' ')}>
           <input
             type="tel"
-            value={cell.value}
-            // onClick={this.onClick}
-            onChange={this.onChange} 
+            value={cell.value === null ? '' : cell.value}
+            onKeyDown={handleChange} 
+            onChange={() => console.log('handler')}
             />
         </td>
       );

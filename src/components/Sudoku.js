@@ -22,8 +22,7 @@ function randomlyGeneratedValue(min, max) {
       let indexEntries = [0, 1, 2, 3, 4, 5, 6, 7, 8];
   
       while (entriesRemoved < entriesToRemove) {
-        let entryRemoved = randomlyGeneratedValue(0, indexEntries.length);
-        console.log('SPLICIING::', newGrid[row])
+        let entryRemoved = randomlyGeneratedValue(0, indexEntries.length)
         newGrid[row][entryRemoved].value = null
         newGrid[row][entryRemoved].editable = true
         indexEntries.splice(entryRemoved, 1);
@@ -105,7 +104,14 @@ function randomlyGeneratedValue(min, max) {
       }
     }
     return true;
-  };
+  }
+  function markAllWithoutConflict(cells) {
+    for (var i = 0; i < 9; i++) {
+      for (var j = 0; j < 9; j++) {
+        cells[i][j].hasConflict = false;
+      }
+    }
+  }
   const solve = (grid, shuffled) => {
     for (let row = 0; row < 9; row++) {
       for (let col = 0; col < 9; col++) {
@@ -115,7 +121,6 @@ function randomlyGeneratedValue(min, max) {
               grid[row][col].value = choice;
               grid[row][col].editable = false;
               solve(grid, shuffled);
-              // this is something that I added to stop the recursion when a solution is found otherwise it finds every solution!
               if (!verifySudoku(grid)) {
                 grid[row][col].value = null;
               }
@@ -140,7 +145,7 @@ function randomlyGeneratedValue(min, max) {
   }
 
 function checkConflicts(cells) {
-    // markAllWithoutConflict(cells);
+    markAllWithoutConflict(cells);
   
     // check horizontal lines
     for (let i = 0; i < 9; i++) {

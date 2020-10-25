@@ -26,6 +26,7 @@ const Board = ({difficulty}) => {
       }
         setGrid(gridCopy)
         sudokuRules.checkConflicts(gridCopy)
+        console.log(sudokuRules.isComplete(gridCopy))
     }
 
     const handleSolveSudoku = () => {

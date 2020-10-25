@@ -1,7 +1,7 @@
 function randomlyGeneratedValue(min, max) {
     return Math.floor(Math.random() * (max - min)) + min
   }
-  
+  // After solving the puzzle, remove the elements dependent on what mode is on.
   const removingEntries = (newGrid, difficulty) => {
     let minToRemove
     let maxToRemove
@@ -31,6 +31,7 @@ function randomlyGeneratedValue(min, max) {
     }
   }
   
+  // Create grid with objects that have value of null are all editable and no conflicts each
   const createGrid = () => {
     let arr = []
   
@@ -53,16 +54,17 @@ function randomlyGeneratedValue(min, max) {
     return a
   }
 
+  // Verify that there are no duplicates in the row
   const verifyRow = (grid, row, val = null) => {
     for (let col = 0; col < 9; col++) {
       if (grid[row][col].value === val) {
-        // console.log('match:', grid[row][col])
         return false;
       }
     }
     return true;
   }
   
+  // Verify that there are no duplicates in the column
   const verifyCol = (grid, col, val = null) => {
     for (let row = 0; row < 9; row++) {
       if (grid[row][col].value === val) {
@@ -73,6 +75,7 @@ function randomlyGeneratedValue(min, max) {
     return true
   }
   
+  // Verify that there are no duplicates in each sub grid
   const verifyBox = (grid, row, col, val = null) => {
     let startRow = parseInt(row / 3) * 3
     let startCol = parseInt(col / 3) * 3
@@ -88,14 +91,10 @@ function randomlyGeneratedValue(min, max) {
   }
 
   const isValid = (grid, row, col, num = null) => {
-    if (
-      verifyBox(grid, row, col, num) &&
-      verifyCol(grid, col, num) && verifyRow(grid, row, num)
-    ) {
+    if (verifyBox(grid, row, col, num) &&verifyCol(grid, col, num) && verifyRow(grid, row, num)) {
       return true
     }
     return false
-
   }
 
   const verifySudoku = grid => {
@@ -136,6 +135,7 @@ function randomlyGeneratedValue(min, max) {
     return grid
   }
 
+  // Check if game is complete. No cell is with coflicts and with null value. if so, than make everything not editable
   function isComplete(matrix) {
     for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 9; j++) {
@@ -164,6 +164,7 @@ function randomlyGeneratedValue(min, max) {
     }
   }
 
+  // Check for conflicts in every cell in horizontal line, vertical and in the boxes. If found duplicates, make their conflicts true
 function checkConflicts(matrix) {
     markAllWithoutConflict(matrix);
   

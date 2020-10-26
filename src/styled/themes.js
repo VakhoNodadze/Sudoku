@@ -18,7 +18,7 @@ export const themes = {
       whiteSecondary: 'rgba(255, 255, 255, .54)',
       default: 'rgba(0, 0, 0, .54)',
       primary: '#181EAD',
-      text: 'rgba(0, 0, 0, .74)',
+      black: 'rgba(0, 0, 0, .74)',
       // secondary: 'rgba(0, 0, 0, .54)',
       // placeholder: 'rgba(0, 0, 0, .34)',
       // disabled: 'rgba(0, 0, 0, .04)',

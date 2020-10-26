@@ -8,7 +8,7 @@ function randomlyGeneratedValue(min, max) {
     if (difficulty === 'Easy') {
       minToRemove = 4
       maxToRemove = 6
-    } else if (difficulty === 'Normal') {
+    } else if (difficulty === 'Medium') {
       minToRemove = 5
       maxToRemove = 7
     } else if (difficulty === 'Hard') {
@@ -27,7 +27,6 @@ function randomlyGeneratedValue(min, max) {
             if(randArray.indexOf(rNum) === -1) randArray.push(rNum)
           }
           for(let i = 0; i < randArray.length; i++){
-            console.log('num', randArray[i])
             let r = subgridY*3+Math.floor(randArray[i]/3)
             let c = subgridX*3+randArray[i]%3
             newGrid[r][c].value = null // Making the value null
@@ -36,22 +35,6 @@ function randomlyGeneratedValue(min, max) {
         }
       }
 
-    // for(let row = 0; row < 9; row+=3){
-    //   for(let col = 0; col < 9; col+=3){
-    //     while(entriesToRemove > 0){
-    //       let startRow = parseInt(row / 3) * 3
-    //       let startCol = parseInt(col / 3) * 3
-    //       let delRow = randomlyGeneratedValue(startRow, startRow + 3) 
-    //       let delCol = randomlyGeneratedValue(startCol, startCol + 3) 
-    //       if(newGrid[delRow][delCol].value !== null){
-    //         newGrid[delRow][delCol].value = null
-    //         newGrid[delRow][delCol].editable = true
-    //         console.log(delRow, ' ',delCol)
-    //         entriesToRemove--
-    //       }
-    //     } 
-    //   }
-    // }
   }
   
   // Create grid with objects that have value of null are all editable and no conflicts each

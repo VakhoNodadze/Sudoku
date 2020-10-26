@@ -4,7 +4,7 @@ import Button from './primitives/Button'
 import cloneDeep from 'lodash.clonedeep'
 import Cell from './Cell'
 
-const Board = ({difficulty, solved}) => {
+const Board = ({difficulty, solved, newGame, setNewGame, handleUnSolve}) => {
 
     const [ grid, setGrid ] = useState([])
 
@@ -12,6 +12,8 @@ const Board = ({difficulty, solved}) => {
       let gridNewly = sudokuRules.createGrid()
       sudokuRules.solve(gridNewly, sudokuRules.shuffle([1, 2, 3, 4, 5, 6, 7, 8, 9]))
       sudokuRules.removingEntries(gridNewly, difficulty)
+      handleUnSolve()
+      setNewGame(false)
       setGrid(gridNewly)
     }
 
@@ -27,7 +29,6 @@ const Board = ({difficulty, solved}) => {
       }
         setGrid(gridCopy)
         sudokuRules.checkConflicts(gridCopy)
-        console.log(sudokuRules.isComplete(gridCopy))
     }
 
     const handleSolveSudoku = () => {
@@ -42,7 +43,7 @@ const Board = ({difficulty, solved}) => {
 
     useEffect(() =>{
       generateBoard()
-    }, [difficulty])
+    }, [difficulty, newGame])
 
     useEffect(() => {
       if(solved){

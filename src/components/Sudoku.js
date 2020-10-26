@@ -7,13 +7,13 @@ function randomlyGeneratedValue(min, max) {
     let maxToRemove
     if (difficulty === 'Easy') {
       minToRemove = 4
-      maxToRemove = 6
+      maxToRemove = 7
     } else if (difficulty === 'Medium') {
       minToRemove = 5
-      maxToRemove = 7
+      maxToRemove = 8
     } else if (difficulty === 'Hard') {
       minToRemove = 6
-      maxToRemove = 8
+      maxToRemove = 9
     } 
   
       // Random number between max number and min number of values that needs to be delete

@@ -43,7 +43,7 @@ const Board = ({difficulty, solved, newGame, setNewGame, handleUnSolve}) => {
 
     useEffect(() =>{
       generateBoard()
-    }, [difficulty, newGame])
+    }, [newGame])
 
     useEffect(() => {
       if(solved){

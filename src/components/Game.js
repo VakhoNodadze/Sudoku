@@ -41,7 +41,7 @@ const Game = ({theme}) => {
         isOpen={modalShow} 
         onClose={() => handleModalClose()} 
         difficulty={difficulty} 
-        setDifficulty={setDifficulty}
+        handleDifficulty={handleDifficulty}
         />
     )
 

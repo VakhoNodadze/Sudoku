@@ -8,14 +8,14 @@ import {
   FormContainer
 } from './styled'
 
-const DifficultyModal = ({ isOpen, onClose, difficulty, theme, setDifficulty }) => {
+const DifficultyModal = ({ isOpen, onClose, difficulty, theme, handleDifficulty }) => {
     const { register, handleSubmit } = useForm({
         defaultValues: {
             difficulty
         }
       })
       const onSubmit = data => {
-          setDifficulty(data.difficulty)
+          handleDifficulty(data.difficulty)
           onClose()
       }
     return(

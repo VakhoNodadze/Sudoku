@@ -10,24 +10,23 @@ export const themes = {
       mini: '12px',
       small: '13px',
       default: '14px',
-      big: '16px',
-      large: '18px'
+      big: '18px',
+      large: '24px'
     },
     color: {
       white: '#fff',
       whiteSecondary: 'rgba(255, 255, 255, .54)',
       default: 'rgba(0, 0, 0, .54)',
-      primary: '#2675fe',
+      primary: '#181EAD',
       text: 'rgba(0, 0, 0, .74)',
-      secondary: 'rgba(0, 0, 0, .54)',
-      placeholder: 'rgba(0, 0, 0, .34)',
-      disabled: 'rgba(0, 0, 0, .04)',
-      border: 'rgba(0, 0, 0, .15)',
-      borderHover: 'rgba(0, 0, 0, .35)',
-      elementBg: '#fff',
-      elementBgSecondary: 'rgba(0,0,0, .034)',
-      elementHover: 'rgba(0, 0, 0, .06)',
-      danger: '#ea3d53',
+      // secondary: 'rgba(0, 0, 0, .54)',
+      // placeholder: 'rgba(0, 0, 0, .34)',
+      // disabled: 'rgba(0, 0, 0, .04)',
+      // border: 'rgba(0, 0, 0, .15)',
+      // borderHover: 'rgba(0, 0, 0, .35)',
+      // elementBg: '#fff',
+      // elementBgSecondary: 'rgba(0,0,0, .034)',
+      // elementHover: 'rgba(0, 0, 0, .06)',
       info: 'rgba(250, 120, 16, 1)',
       success: 'rgba(0, 217, 176, 1)'
     },
@@ -50,56 +49,13 @@ export const themes = {
         700: 'rgba(255, 255, 255, .54)',
         1000: 'rgba(255, 255, 255, 1)'
       },
-      secondary: {
-        200: 'rgba(0, 0, 0, .034)',
-        300: 'rgba(0, 0, 0, .084)',
-        500: 'rgba(0, 0, 0, .34)',
-        1000: 'rgba(0, 0, 0, 1)'
-      },
       primary: {
-        200: 'rgba(38, 117, 254, .064)',
+        200: '#181EAD',
         500: 'rgba(38, 117, 254, .54)',
         800: 'rgba(38, 117, 254, .84)',
         900: 'rgba(38, 117, 254, .94)',
-        1000: 'rgba(38, 117, 254, 1)'
+        1000: '#fff'
       },
-      danger: {
-        200: '#F1E8E9',
-        500: 'rgba(234, 61, 83, .54)',
-        1000: 'rgba(234, 61, 83, 1)'
-      },
-      info: {
-        200: 'rgba(250, 120, 16, .064)',
-        500: 'rgba(250, 120, 16, .54)',
-        1000: 'rgba(250, 120, 16, 1)'
-      },
-      success: {
-        200: 'rgba(0, 217, 176, .64)',
-        500: 'rgba(0, 217, 176, .54)',
-        1000: 'rgba(0, 217, 176, 1)'
-      },
-      elementBgSecondary: {
-        200: 'rgba(0,0,0, .014)',
-        500: 'rgba(0,0,0, .024)',
-        1000: 'rgba(0,0,0, .034)'
-      }
-    },
-    avatarSize: {
-      tiny: '28px',
-      mini: '32px',
-      small: '44px',
-      default: '64px',
-      large: '84px',
-      big: '120px',
-      huge: '154px'
-    },
-    imageSize: {
-      mini: '124px',
-      small: '200px',
-      default: '300px',
-      big: '450px',
-      large: '600px',
-      fluid: '100%'
     },
     elementSize: {
       tiny: '24px',

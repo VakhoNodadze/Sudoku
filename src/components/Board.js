@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import sudokuRules from './Sudoku'
+import Button from './primitives/Button'
 import cloneDeep from 'lodash.clonedeep'
 import Cell from './Cell'
 
-const Board = ({difficulty}) => {
+const Board = ({difficulty, solved}) => {
 
     const [ grid, setGrid ] = useState([])
 
@@ -39,6 +40,16 @@ const Board = ({difficulty}) => {
         generateBoard()
     }, [])  
 
+    useEffect(() =>{
+      generateBoard()
+    }, [difficulty])
+
+    useEffect(() => {
+      if(solved){
+        handleSolveSudoku()
+      }
+    }, [solved])
+
     return (
       <>
         <div className="container">
@@ -56,8 +67,6 @@ const Board = ({difficulty}) => {
             </tbody>
           </table>
         </div>
-
-        <button onClick={() => handleSolveSudoku()}>Solve it!</button>
         </>
     )
 }

@@ -9,7 +9,7 @@ const StyledContainer = styled.div`
     flex-direction: column;
 `
 const FormContainer = styled.div `
-    padding: 0 5rem;
+    padding: 0 2rem;
 `
 export {
   StyledContainer, FormContainer

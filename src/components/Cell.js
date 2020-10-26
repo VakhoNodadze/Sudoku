@@ -4,6 +4,8 @@ const Cell = ({cell, handleKeyPress, row, col}) => {
   
     let classes = []
     console.log(typeof col)
+    classes.push(col === 0 ? 'border-left' : '')
+    classes.push(row === 0 ? 'border-top' : '')
     classes.push((col+1) % 3=== 0 ? 'border-right' : '')
     classes.push((row+1) % 3=== 0 ? 'border-bottom' : '')
     classes.push(cell.editable ? 'editable' : 'not-editable')

@@ -2,8 +2,11 @@ import React from 'react'
 
 const Cell = ({cell, handleKeyPress, row, col}) => {
   
-    let classes = [];
-    classes.push(cell.editable ? 'editable' : 'not-editable');
+    let classes = []
+    console.log(typeof col)
+    classes.push((col+1) % 3=== 0 ? 'border-right' : '')
+    classes.push((row+1) % 3=== 0 ? 'border-bottom' : '')
+    classes.push(cell.editable ? 'editable' : 'not-editable')
     classes.push(cell.hasConflict ? 'has-conflict' : 'no-conflict')
     const handleChange = (e) => {
       const number = e.key;

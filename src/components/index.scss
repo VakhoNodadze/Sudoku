@@ -8,19 +8,33 @@ td {
         border: 0px;
         text-align: center;
     }
+    &:focus {
+      outline: none;
+    }
 }
 .container{
     display: flex;
     justify-content:center;
 }
-.has-conflict {
-  input {
-    color: red;
-  }
-}
 .not-editable {
     border: 2px solid #000;
   input {
     font-weight: bold;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+    font-size: 18px;
   }
+}
+.has-conflict {
+  border: 1px solid red;
+  input {
+    color: red;
+    background-color: rgba(255,0,0,0.2);
+  }
+}
+.border-right{
+  border-right: 5px solid black; 
+}
+.border-bottom{
+  border-bottom: 5px solid black;
 }

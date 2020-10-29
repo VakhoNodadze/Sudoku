@@ -48,9 +48,9 @@ const Game = ({theme}) => {
     return (
         <>
             <div style={{display: 'flex'}}>
-                <div style={{display: 'flex', flexDirection: 'column'}}>
+                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
                     <Lanars />
-                    <p style={{color: '#323838', writingMode: 'vertical-rl', textOrientation: 'mixed', fontSize: '100px'}}>SUDOKU</p>
+                    <p style={{color: '#323838', writingMode: 'vertical-rl', textOrientation: 'mixed', fontSize: '100px', marginTop: '20px'}}>SUDOKU</p>
                 </div>
                 <div>
                     <Board difficulty={difficulty} setNewGame={setNewGame} solved={solved} newGame={newGame} handleUnSolve={() => handleUnSolve()} />

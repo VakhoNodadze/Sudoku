@@ -3,7 +3,6 @@ import Board from './Board'
 import DifficultyModal from './DifficultyModal'
 import  { withTheme } from 'styled-components'
 import Button from './primitives/Button'
-import './index.scss'
 
 const Game = ({theme}) => {
     const [difficulty, setDifficulty] = useState('Easy')
@@ -50,6 +49,7 @@ const Game = ({theme}) => {
             <Board difficulty={difficulty} setNewGame={setNewGame} solved={solved} newGame={newGame} handleUnSolve={() => handleUnSolve()} />
             <div style={{display: 'flex', width: '50%', margin: '3rem auto'}}>
                 <Button 
+                    style={{margin: '0 5px'}}
                     variant="primary" 
                     color="primary" 
                     fontSize={theme.fontSize.big}
@@ -59,6 +59,7 @@ const Game = ({theme}) => {
                     Change Difficulty
                 </Button>
                 <Button 
+                    style={{margin: '0 5px'}}
                     variant="primary" 
                     color="primary" 
                     fontSize={theme.fontSize.big}
@@ -68,6 +69,7 @@ const Game = ({theme}) => {
                     Create New Puzzle
                 </Button>
                 <Button 
+                    style={{margin: '0 5px'}}
                     variant="primary" 
                     color="primary" 
                     fontSize={theme.fontSize.big}

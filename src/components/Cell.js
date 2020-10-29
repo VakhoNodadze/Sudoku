@@ -1,37 +1,68 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const Cell = ({cell, handleKeyPress, row, col}) => {
   
-    let classes = []
-    console.log(typeof col)
-    classes.push(col === 0 ? 'border-left' : '')
-    classes.push(row === 0 ? 'border-top' : '')
-    classes.push((col+1) % 3=== 0 ? 'border-right' : '')
-    classes.push((row+1) % 3=== 0 ? 'border-bottom' : '')
-    classes.push(cell.editable ? 'editable' : 'not-editable')
-    classes.push(cell.hasConflict ? 'has-conflict' : 'no-conflict')
     const handleChange = (e) => {
-      const number = e.key;
+      const number = e.key
       if(!cell.editable){
         return
       }
       if (number === 'Backspace' || number === 'Delete') {
-        handleKeyPress(null, row, col);
+        handleKeyPress(null, row, col)
       } else {
-        handleKeyPress(number, row, col);
+        handleKeyPress(number, row, col)
       }
     }
+
+    const renderColor = () => {
+      if(cell.hasConflict){
+        return 'red'
+      }else if(!cell.editable){
+        return 'rgba(0,0,0,0.4)'
+      }
+      return '#000'
+    }
+    
       return (
-        <td className={classes.join(' ')}>
-          <input
-            type="tel"
+        <Container 
+        marginRight={(col + 1) % 3}
+        marginBottom={(row + 1) % 3}
+        >
+          <Input
+            color={renderColor()}
+            conflict={cell.hasConflict}
             value={cell.value === null ? '' : cell.value}
             onKeyDown={handleChange} 
-            onChange={() => console.log('handler')}
+            onChange={() => console.log()}
             />
-        </td>
-      );
+        </Container>
+      )
   
   }
 
   export default Cell
+
+  const Container = styled.div `
+    margin-right: ${props => props.marginRight ? '0' : '1rem'};
+    margin-bottom: ${props => props.marginBottom ? '0' : '1rem'};
+    font-size: 2.5rem;
+    display: inline-block;
+    width: 4.25rem;
+    height: 4.25rem;
+    padding: 2px;
+    border-radius: 0.5rem;
+  `
+  const Input = styled.input `
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: ${props => props.color};
+    background-color: ${props => props.conflict ? 'rgba(255, 56, 56, 0.05)' : '#fff'};
+    border: ${props => props.conflict ? '1px solid #FF3838' : '1px solid #000'};
+    border-radius: 0.5rem;
+    &:focus {
+      outline:none;
+    }
+  `

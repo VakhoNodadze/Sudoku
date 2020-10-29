@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 import sudokuRules from './Sudoku'
-import Button from './primitives/Button'
 import cloneDeep from 'lodash.clonedeep'
 import Cell from './Cell'
 
@@ -53,20 +52,18 @@ const Board = ({difficulty, solved, newGame, setNewGame, handleUnSolve}) => {
 
     return (
       <>
-        <div className="container">
-          <table className="sudoku-table">
-            <tbody>
+        <div style={{display: 'flex', justifyContent: 'center'}}>
+          <div>
               {grid.map((row, rowIndex) => {
                 return (
-                  <tr key={rowIndex}>
+                  <div key={rowIndex}>
                     {row.map((cell, colIndex) => {
-                      return <Cell key={`${rowIndex}${colIndex}`} cell={cell} row={rowIndex} col={colIndex} handleKeyPress={handleKeyPress} />;
+                      return <Cell key={`${rowIndex}${colIndex}`} cell={cell} row={rowIndex} col={colIndex} handleKeyPress={handleKeyPress} />
                     })}
-                  </tr>
-                );
+                  </div>
+                )
               })}
-            </tbody>
-          </table>
+          </div>
         </div>
         </>
     )

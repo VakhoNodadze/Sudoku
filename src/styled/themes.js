@@ -10,7 +10,7 @@ export const themes = {
       mini: '12px',
       small: '13px',
       default: '14px',
-      big: '18px',
+      big: '1.1rem',
       large: '24px'
     },
     color: {
@@ -77,29 +77,6 @@ export const themes = {
       default: '1px 4px 8px rgba(0, 0, 0, 0.1)',
       primary: '0px 1px 4px rgba(0, 0, 0, 0.36)'
     },
-    // paddingVertical: {
-    //   tiny: '4px',
-    //   mini: '8px',
-    //   small: '12px',
-    //   default: '16px',
-    //   big: '18px',
-    //   large: '24px',
-    //   huge: '44px'
-    // },
-    // paddingHorizontal: {
-    //   micro: '12px',
-    //   tiny: '16px',
-    //   mini: '18px',
-    //   small: '22px',
-    //   default: '24px',
-    //   big: '34px',
-    //   large: '44px',
-    //   huge: '64px'
-    // },
-    // marginHorizontal: {
-    //   tiny: '2px',
-    //   default: '16px'
-    // },
     spacing: {
       noSpacing: 0,
       tiny: 2,

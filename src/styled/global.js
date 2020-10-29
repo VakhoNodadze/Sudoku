@@ -9,10 +9,20 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: ${props => props.theme.fontFamily.default};
-    font-size: ${props => props.theme.fontSize.default};
-    color: ${props => props.theme.color.text};
+    font-size: 14px !important;
     line-height: 1.5;
     margin: 0;
+  }
+  @media (min-width: 568px) {
+    body{
+      font-size: 8px !important;
+    }
+  }
+  @media (min-width: 968) {
+    body{
+      font-size: 12px !important;
+    }
+    
   }
 
   input, textarea {

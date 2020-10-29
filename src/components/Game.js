@@ -3,6 +3,7 @@ import Board from './Board'
 import DifficultyModal from './DifficultyModal'
 import  { withTheme } from 'styled-components'
 import Button from './primitives/Button'
+import Lanars from './primitives/Icon/Lanars'
 
 const Game = ({theme}) => {
     const [difficulty, setDifficulty] = useState('Easy')
@@ -46,40 +47,48 @@ const Game = ({theme}) => {
 
     return (
         <>
-            <Board difficulty={difficulty} setNewGame={setNewGame} solved={solved} newGame={newGame} handleUnSolve={() => handleUnSolve()} />
-            <div style={{display: 'flex', width: '50%', margin: '3rem auto'}}>
-                <Button 
-                    style={{margin: '0 5px'}}
-                    variant="primary" 
-                    color="primary" 
-                    fontSize={theme.fontSize.big}
-                    fluid 
-                    circular 
-                    onClick={() => handleModalShow()}>
-                    Change Difficulty
-                </Button>
-                <Button 
-                    style={{margin: '0 5px'}}
-                    variant="primary" 
-                    color="primary" 
-                    fontSize={theme.fontSize.big}
-                    fluid 
-                    circular 
-                    onClick={() => handleNewGame()}>
-                    Create New Puzzle
-                </Button>
-                <Button 
-                    style={{margin: '0 5px'}}
-                    variant="primary" 
-                    color="primary" 
-                    fontSize={theme.fontSize.big}
-                    fluid 
-                    circular 
-                    onClick={() => handleSolve()}>
-                    Solve it!
-                </Button>
+            <div style={{display: 'flex'}}>
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                    <Lanars />
+                    <p style={{color: '#323838', writingMode: 'vertical-rl', textOrientation: 'mixed', fontSize: '100px'}}>SUDOKU</p>
+                </div>
+                <div>
+                    <Board difficulty={difficulty} setNewGame={setNewGame} solved={solved} newGame={newGame} handleUnSolve={() => handleUnSolve()} />
+                    <div style={{display: 'flex', margin: '3rem auto'}}>
+                        <Button 
+                            style={{margin: '0 5px'}}
+                            variant="primary" 
+                            color="primary" 
+                            fontSize={theme.fontSize.big}
+                            fluid 
+                            circular 
+                            onClick={() => handleModalShow()}>
+                            Change Difficulty
+                        </Button>
+                        <Button 
+                            style={{margin: '0 5px'}}
+                            variant="primary" 
+                            color="primary" 
+                            fontSize={theme.fontSize.big}
+                            fluid 
+                            circular 
+                            onClick={() => handleNewGame()}>
+                            Create New Puzzle
+                        </Button>
+                        <Button 
+                            style={{margin: '0 5px'}}
+                            variant="primary" 
+                            color="primary" 
+                            fontSize={theme.fontSize.big}
+                            fluid 
+                            circular 
+                            onClick={() => handleSolve()}>
+                            Solve it!
+                        </Button>
+                    </div>
+                </div>
+                {difficulty && renderModal()}
             </div>
-            {difficulty && renderModal()}
         </>
     )
 }

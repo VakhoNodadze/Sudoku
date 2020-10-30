@@ -1,4 +1,3 @@
-Project was built in two days.
 Used my own algorithms.
 
 1)Filling the matix with empty objects which has value, editable and hasConflict properties
@@ -22,4 +21,4 @@ Future features:
 
 3)Using localstorage to continue the game where you left off.
 
-Some of the styling and styled-components were used from my previous projects so that's why it looks like an overkill
+For live view visit: https://vakhonodadze.github.io/Sudoku/

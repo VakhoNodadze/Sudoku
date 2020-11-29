@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Board from './Board'
 import DifficultyModal from './DifficultyModal'
-import  { withTheme } from 'styled-components'
+import  styled, { withTheme } from 'styled-components'
 import Button from './primitives/Button'
 import Lanars from './primitives/Icon/Lanars'
 
@@ -47,11 +47,13 @@ const Game = ({theme}) => {
 
     return (
         <>
-            <div style={{display: 'flex'}}>
-                <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
-                    <Lanars />
-                    <p style={{color: '#323838', writingMode: 'vertical-rl', textOrientation: 'mixed', fontSize: '100px', marginTop: '20px'}}>SUDOKU</p>
-                </div>
+            <div style={{display: 'flex', justifyContent: 'center'}}>
+                <Container>
+                    <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+                        <Lanars />
+                        <p style={{color: '#323838', writingMode: 'vertical-rl', textOrientation: 'mixed', fontSize: '6rem', marginTop: '1rem'}}>SUDOKU</p>
+                    </div>
+                </Container>
                 <div>
                     <Board difficulty={difficulty} setNewGame={setNewGame} solved={solved} newGame={newGame} handleUnSolve={() => handleUnSolve()} />
                     <div style={{display: 'flex', margin: '3rem auto'}}>
@@ -94,3 +96,9 @@ const Game = ({theme}) => {
 }
 
 export default withTheme(Game)
+
+const Container = styled.div `
+    @media (max-width: 875px){
+        display: none;
+    }
+`

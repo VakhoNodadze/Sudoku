@@ -13,12 +13,12 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     margin: 0;
   }
-  @media (min-width: 568px) {
+  @media (max-width: 568px) {
     body{
       font-size: 8px !important;
     }
   }
-  @media (min-width: 968) {
+  @media (max-width: 968px) {
     body{
       font-size: 12px !important;
     }

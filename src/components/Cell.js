@@ -52,6 +52,16 @@ const Cell = ({cell, handleKeyPress, row, col}) => {
     height: 4.25rem;
     padding: 2px;
     border-radius: 0.5rem;
+
+    @media (max-width: 968px) {
+      width: 3.25rem;
+      height: 3.25rem;
+    }
+
+    @media (max-width: 568px) {
+      width: 2.25rem;
+      height: 2.25rem;
+    }
   `
   const Input = styled.input `
     width: 100%;

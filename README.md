@@ -13,12 +13,4 @@ Used my own algorithms.
 
 User can change the difficiluty of the game, start a new game or see the solved version
 
-Future features:
-
-1)Tests
-
-2)Better code readability
-
-3)Using localstorage to continue the game where you left off.
-
 For live view visit: https://vakhonodadze.github.io/Sudoku/

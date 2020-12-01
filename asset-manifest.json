@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/Sudoku/static/js/main.f7cc9eda.chunk.js",
-    "main.js.map": "/Sudoku/static/js/main.f7cc9eda.chunk.js.map",
+    "main.js": "/Sudoku/static/js/main.38290665.chunk.js",
+    "main.js.map": "/Sudoku/static/js/main.38290665.chunk.js.map",
     "runtime-main.js": "/Sudoku/static/js/runtime-main.bb948b0f.js",
     "runtime-main.js.map": "/Sudoku/static/js/runtime-main.bb948b0f.js.map",
-    "static/js/2.4617504a.chunk.js": "/Sudoku/static/js/2.4617504a.chunk.js",
-    "static/js/2.4617504a.chunk.js.map": "/Sudoku/static/js/2.4617504a.chunk.js.map",
+    "static/js/2.89582bc0.chunk.js": "/Sudoku/static/js/2.89582bc0.chunk.js",
+    "static/js/2.89582bc0.chunk.js.map": "/Sudoku/static/js/2.89582bc0.chunk.js.map",
     "static/js/3.22746187.chunk.js": "/Sudoku/static/js/3.22746187.chunk.js",
     "static/js/3.22746187.chunk.js.map": "/Sudoku/static/js/3.22746187.chunk.js.map",
     "index.html": "/Sudoku/index.html",
-    "static/js/2.4617504a.chunk.js.LICENSE.txt": "/Sudoku/static/js/2.4617504a.chunk.js.LICENSE.txt"
+    "static/js/2.89582bc0.chunk.js.LICENSE.txt": "/Sudoku/static/js/2.89582bc0.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.bb948b0f.js",
-    "static/js/2.4617504a.chunk.js",
-    "static/js/main.f7cc9eda.chunk.js"
+    "static/js/2.89582bc0.chunk.js",
+    "static/js/main.38290665.chunk.js"
   ]
 }

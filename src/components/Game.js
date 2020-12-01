@@ -77,16 +77,6 @@ const Game = ({theme}) => {
                             onClick={() => handleNewGame()}>
                             Create New Puzzle
                         </Button>
-                        <Button 
-                            style={{margin: '0 5px'}}
-                            variant="primary" 
-                            color="primary" 
-                            fontSize={theme.fontSize.big}
-                            fluid 
-                            circular 
-                            onClick={() => handleSolve()}>
-                            Solve it!
-                        </Button>
                     </div>
                 </div>
                 {difficulty && renderModal()}
